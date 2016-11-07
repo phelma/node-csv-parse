@@ -148,7 +148,8 @@ Implementation of the [`stream.Transform` API][transform]
         @__write chunk, false
         callback()
       catch err
-        this.emit 'error', err
+        this.emit 'warning', err
+        callback()
 
     Parser.prototype._flush = (callback) ->
       try
